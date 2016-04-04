@@ -91,11 +91,15 @@
 
         FB.api('/me/likes/384468045506', function(response) {
             console.log(response.data);
+
+            if (response.data && response.data.length > 0) {
+                console.log("Thanks for liking " + response.data[0].name + "!");
+            } else {
+                console.log("Don't like us yet? Feel free to check us out <a target='_blank' href='https://facebook.com/" + pageid + "'>here</a>");
+            }            
         });
 
-        FB.api('/me/likes/110770065667422', function(response) {
-            console.log(response.data);
-        });
+
 
 
     }
